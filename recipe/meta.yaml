@@ -24,7 +24,6 @@ requirements:
     - numpy
     - tqdm
     - posix_ipc  # [unix]
-    - pywin32    # [win]
     - cloudpickle
     - psutil
 
