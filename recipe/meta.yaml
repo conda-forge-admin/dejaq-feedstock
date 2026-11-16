@@ -1,13 +1,13 @@
 {% set name = "dejaq" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dejaq-{{ version }}.tar.gz
-  sha256: faa71e5abf3d6cbbe94954bc6c99456f046284083f0c2ad43fb40bee7e6c77a3
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/dejaq-{{ version }}.tar.gz
+  sha256: 07d6997f14abeab613d92f4e88d536b756776f56531e1007fbe2429dce5a3149
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -24,7 +24,6 @@ requirements:
     - numpy
     - tqdm
     - posix_ipc  # [unix]
-    - pywin32    # [win]
     - cloudpickle
     - psutil
 
