@@ -1,5 +1,5 @@
 {% set name = "dejaq" %}
-{% set version = "0.8.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/dejaq-{{ version }}.tar.gz
-  sha256: 07d6997f14abeab613d92f4e88d536b756776f56531e1007fbe2429dce5a3149
+  sha256: f08c3a65a6b9e6af56ee49bacbe84b519c88e8ac82b28b8a0a0b49b113899b8f
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
