@@ -10,20 +10,23 @@ source:
   sha256: f08c3a65a6b9e6af56ee49bacbe84b519c88e8ac82b28b8a0a0b49b113899b8f
 
 build:
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}.*
     - setuptools >=42
     - wheel
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - numpy
     - tqdm
+    - __unix     # [unix]
     - posix_ipc  # [unix]
+    - __win      # [win]
     - cloudpickle
     - psutil
 
@@ -33,7 +36,7 @@ test:
   commands:
     - pip check
   requires:
-    - python
+    - python {{ python_min }}.*
     - pip
 
 about:
